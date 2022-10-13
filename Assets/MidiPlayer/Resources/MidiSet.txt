@@ -101,5 +101,6 @@
     <string>WishYouWereHere</string>
     <string>Yves Montand - A bicyclette</string>
     <string>Zagronia - Dw1gOver</string>
+    <string>かえるのうた</string>
   </MidiFiles>
 </MidiSet>
