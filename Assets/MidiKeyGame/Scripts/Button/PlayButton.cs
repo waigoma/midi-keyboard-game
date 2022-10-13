@@ -9,12 +9,14 @@ namespace MidiKeyGame.Scripts.Button
         
         private void Start()
         {
-            _midiPlayerBehavior = GetComponent<MidiPlayerBehavior>();
+            _midiPlayerBehavior = FindObjectOfType<MidiPlayerBehavior>();
         }
 
         public void OnClick()
         {
+            _midiPlayerBehavior.PrintMidiEvents();
             _midiPlayerBehavior.PlayIndex();
+            Debug.Log("onClick");
         }
     }
 }

@@ -16,11 +16,20 @@ namespace MidiKeyGame.Scripts
             var mfp = FindObjectOfType<MidiFilePlayer>();
             
             _midiPlayerController = new MidiPlayerController(mfl, mfp);
+            MidiPlayerController.SetIndex(index);
+        }
+
+        public void PrintMidiEvents()
+        {
+            foreach (var events in _midiPlayerController.GetMidiEvents())
+            {
+                if (events.Command == MPTKCommand.NoteOn)
+                    Debug.Log($"Note on Time:{events.RealTime} millisecond  Channel:{events.Channel}  Note:{events.Value}  Duration:{events.Duration} millisecond  Velocity:{events.Velocity}");
+            }
         }
 
         public void PlayIndex()
         {
-            MidiPlayerController.SetIndex(index);
             _midiPlayerController.PlayIndexMidi();
         }
         
