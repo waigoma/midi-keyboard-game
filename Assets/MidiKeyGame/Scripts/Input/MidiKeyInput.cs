@@ -1,5 +1,5 @@
+using MidiKeyGame.Scripts.Input.Keyboard;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace MidiKeyGame.Scripts.Input
 {
@@ -11,14 +11,10 @@ namespace MidiKeyGame.Scripts.Input
         {
             _inputAction = new MidiKeyInputAction();
 
-            _inputAction.MidiKeyMap4.C.performed += C4OnPerformed;
+            var mk4 = new MidiKey4(_inputAction);
+            mk4.Initialize();
             
             _inputAction.Enable();
-        }
-
-        private void C4OnPerformed(InputAction.CallbackContext ctx)
-        {
-            Debug.Log("C4");
         }
     }
 
