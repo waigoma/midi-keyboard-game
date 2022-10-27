@@ -1,21 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace MidiKeyGame.Scripts.Input
 {
     public class MidiKeyInput : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        private MidiKeyInputAction _inputAction;
         
+        private void Start()
+        {
+            _inputAction = new MidiKeyInputAction();
+
+            _inputAction.MidiKeyMap4.C.performed += C4OnPerformed;
+            
+            _inputAction.Enable();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void C4OnPerformed(InputAction.CallbackContext ctx)
         {
-        
+            Debug.Log("C4");
         }
     }
 
