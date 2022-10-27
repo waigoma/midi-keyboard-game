@@ -62,6 +62,15 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.inputsystem": {
+      "version": "1.4.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.0.2",
       "depth": 2,
@@ -162,6 +171,23 @@
       "dependencies": {
         "com.unity.timeline": "1.1.0"
       },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.minis": {
+      "version": "1.0.10",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "jp.keijiro.rtmidi": "1.0.4",
+        "com.unity.inputsystem": "1.0.1"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.rtmidi": {
+      "version": "1.0.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
       "url": "https://registry.npmjs.com"
     },
     "com.unity.modules.ai": {
