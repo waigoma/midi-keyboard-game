@@ -7,6 +7,8 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
     {
         protected MidiKeyInputAction inputAction;
         protected int octave;
+
+        public abstract void Initialize();
         
         protected void COnPerformed(InputAction.CallbackContext ctx)
         {

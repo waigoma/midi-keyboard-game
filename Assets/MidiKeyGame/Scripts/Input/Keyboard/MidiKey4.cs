@@ -8,7 +8,7 @@
             octave = 4;
         }
         
-        public void Initialize()
+        public override void Initialize()
         {
             var mkm = inputAction.MidiKeyMap4;
             mkm.C.performed += COnPerformed;

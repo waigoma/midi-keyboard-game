@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MidiKeyGame.Scripts.Input.Keyboard;
 using UnityEngine;
 
@@ -11,8 +12,14 @@ namespace MidiKeyGame.Scripts.Input
         {
             _inputAction = new MidiKeyInputAction();
 
-            var mk4 = new MidiKey4(_inputAction);
-            mk4.Initialize();
+            var mkList = new List<MidiKey>()
+            {
+                new MidiKey3(_inputAction),
+                new MidiKey4(_inputAction),
+                new MidiKey5(_inputAction),
+            };
+            
+            foreach (var mk in mkList) mk.Initialize();
             
             _inputAction.Enable();
         }
