@@ -12,7 +12,7 @@ namespace MidiKeyGame.Scripts.Input
         {
             _inputAction = new MidiKeyInputAction();
 
-            var mkList = new List<MidiKey>()
+            var mkList = new List<MidiKey>
             {
                 new MidiKey3(_inputAction),
                 new MidiKey4(_inputAction),
