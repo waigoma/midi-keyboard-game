@@ -24,6 +24,74 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
     ""name"": ""MidiKeyInputAction"",
     ""maps"": [
         {
+            ""name"": ""MidiKeyMap0"",
+            ""id"": ""5ffa5a19-0b9a-4eda-9ea1-b7fc9f30a3f4"",
+            ""actions"": [
+                {
+                    ""name"": ""A"",
+                    ""type"": ""Button"",
+                    ""id"": ""f88132e2-fbbf-4761-bcdb-db9e5d5854b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""As"",
+                    ""type"": ""Button"",
+                    ""id"": ""5586807c-55dd-458a-8d6b-b3f44f2385fe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""B"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca22e10e-6963-4e4d-84c5-a155c17e32e6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2bd48a6a-5a88-4172-b457-573ef8578189"",
+                    ""path"": ""<MidiDevice>/note021"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1748df90-e4ba-44fc-bd56-cc1e6844966d"",
+                    ""path"": ""<MidiDevice>/note022"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""As"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ffe51578-33cd-4d0b-9ca1-652753e26e68"",
+                    ""path"": ""<MidiDevice>/note023"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""B"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""MidiKeyMap1"",
             ""id"": ""18602f39-e027-40c6-9615-d2bf5dcaed40"",
             ""actions"": [
@@ -140,7 +208,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f5105f11-bf01-404d-9c7e-7b8803438703"",
-                    ""path"": ""<MidiDevice>/note060"",
+                    ""path"": ""<MidiDevice>/note024"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -151,7 +219,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3f668832-87b6-4fe5-b4d6-153fdb67708c"",
-                    ""path"": ""<MidiDevice>/note061"",
+                    ""path"": ""<MidiDevice>/note025"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -162,7 +230,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""46e0abe8-df5e-4d4f-9ea3-8cb81d0da96b"",
-                    ""path"": ""<MidiDevice>/note062"",
+                    ""path"": ""<MidiDevice>/note026"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -173,7 +241,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""49f6a06c-a457-431e-855e-8ac89910fecd"",
-                    ""path"": ""<MidiDevice>/note063"",
+                    ""path"": ""<MidiDevice>/note027"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -184,7 +252,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""17c95b5d-6acf-4986-b104-0d1fe68a2a79"",
-                    ""path"": ""<MidiDevice>/note064"",
+                    ""path"": ""<MidiDevice>/note028"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -195,7 +263,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ba7a60a4-7731-40a4-a67f-402a01da0825"",
-                    ""path"": ""<MidiDevice>/note065"",
+                    ""path"": ""<MidiDevice>/note029"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -206,7 +274,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6f262ff5-fd62-4776-8829-0ed234e4bbe8"",
-                    ""path"": ""<MidiDevice>/note066"",
+                    ""path"": ""<MidiDevice>/note030"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -217,7 +285,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""056537f4-6cfd-4a78-b246-873c8b2d093c"",
-                    ""path"": ""<MidiDevice>/note067"",
+                    ""path"": ""<MidiDevice>/note031"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -228,7 +296,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cf9a52c6-fbc5-45e4-a727-b942153a17fe"",
-                    ""path"": ""<MidiDevice>/note068"",
+                    ""path"": ""<MidiDevice>/note032"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -239,7 +307,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""bdd97681-3a81-42e4-955b-7ecc7351be27"",
-                    ""path"": ""<MidiDevice>/note069"",
+                    ""path"": ""<MidiDevice>/note033"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -250,7 +318,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4fe8cb6a-32d9-4537-a84b-8dd03ae494b3"",
-                    ""path"": ""<MidiDevice>/note070"",
+                    ""path"": ""<MidiDevice>/note034"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -261,7 +329,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b81a7c16-dd44-43f4-b85f-1f9b19c4ac32"",
-                    ""path"": ""<MidiDevice>/note071"",
+                    ""path"": ""<MidiDevice>/note035"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -388,7 +456,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e8aec9d6-7f32-49a1-a8d4-0c3d13254288"",
-                    ""path"": ""<MidiDevice>/note060"",
+                    ""path"": ""<MidiDevice>/note036"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -399,7 +467,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3e79d9e2-6bea-4852-8cee-8fe3e54a8eca"",
-                    ""path"": ""<MidiDevice>/note061"",
+                    ""path"": ""<MidiDevice>/note037"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -410,7 +478,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e700f82a-61fe-4361-be3c-8a01b5b0dc58"",
-                    ""path"": ""<MidiDevice>/note062"",
+                    ""path"": ""<MidiDevice>/note038"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -421,7 +489,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""448bfb0b-43d0-4ce8-ae14-c28b5193f2c2"",
-                    ""path"": ""<MidiDevice>/note063"",
+                    ""path"": ""<MidiDevice>/note039"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -432,7 +500,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7b3fc75c-b8b6-4bec-93fc-3213aaa0dae8"",
-                    ""path"": ""<MidiDevice>/note064"",
+                    ""path"": ""<MidiDevice>/note040"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -443,7 +511,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4b247eed-0f2c-4d8f-8aa6-a6f94374f987"",
-                    ""path"": ""<MidiDevice>/note065"",
+                    ""path"": ""<Keyboard>/f2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -454,7 +522,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e6bb5aa5-e64d-4e39-889a-636ba99da88d"",
-                    ""path"": ""<MidiDevice>/note066"",
+                    ""path"": ""<MidiDevice>/note042"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -465,7 +533,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d51968bc-fa88-430c-8802-e806f62f5f4c"",
-                    ""path"": ""<MidiDevice>/note067"",
+                    ""path"": ""<MidiDevice>/note043"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -476,7 +544,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""284e834d-d02e-4ac3-89cc-29d23beaa519"",
-                    ""path"": ""<MidiDevice>/note068"",
+                    ""path"": ""<MidiDevice>/note044"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -487,7 +555,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""73153c07-65cf-4007-8386-087526d23c8d"",
-                    ""path"": ""<MidiDevice>/note069"",
+                    ""path"": ""<MidiDevice>/note045"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -498,7 +566,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""168ed63e-0d01-4f8e-aab2-5c4687199b1d"",
-                    ""path"": ""<MidiDevice>/note070"",
+                    ""path"": ""<MidiDevice>/note046"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -509,7 +577,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""20904ed5-7785-4b8a-9a6e-4e424494209b"",
-                    ""path"": ""<MidiDevice>/note071"",
+                    ""path"": ""<MidiDevice>/note047"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1380,7 +1448,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d69df661-d358-4689-9592-94ce351783fe"",
-                    ""path"": ""<MidiDevice>/note060"",
+                    ""path"": ""<MidiDevice>/note084"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1391,7 +1459,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e0383c11-d7ee-4e5a-bc6d-7fe9567b5a6d"",
-                    ""path"": ""<MidiDevice>/note061"",
+                    ""path"": ""<MidiDevice>/note085"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1402,7 +1470,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b9f428ef-c291-4457-aa58-ca999a446049"",
-                    ""path"": ""<MidiDevice>/note062"",
+                    ""path"": ""<MidiDevice>/note086"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1413,7 +1481,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""91f9436d-71b9-4b10-8532-b7a152c8047b"",
-                    ""path"": ""<MidiDevice>/note063"",
+                    ""path"": ""<MidiDevice>/note087"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1424,7 +1492,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fdfdded2-0395-48a1-8eac-805e8e765b1c"",
-                    ""path"": ""<MidiDevice>/note064"",
+                    ""path"": ""<MidiDevice>/note088"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1435,7 +1503,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""58eb047e-2679-467b-9f6f-8ea9b4acd577"",
-                    ""path"": ""<MidiDevice>/note065"",
+                    ""path"": ""<MidiDevice>/note089"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1446,7 +1514,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""806c7956-d1e4-416c-94e6-8a9e94799377"",
-                    ""path"": ""<MidiDevice>/note066"",
+                    ""path"": ""<MidiDevice>/note090"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1457,7 +1525,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ed356c99-c067-4803-85ca-83dded4bafe2"",
-                    ""path"": ""<MidiDevice>/note067"",
+                    ""path"": ""<MidiDevice>/note091"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1468,7 +1536,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0e90f104-12ce-4e0f-95ee-826b17ba8fa4"",
-                    ""path"": ""<MidiDevice>/note068"",
+                    ""path"": ""<MidiDevice>/note092"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1479,7 +1547,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9d9f76d7-45e1-405b-9bd9-48c9c3b71d03"",
-                    ""path"": ""<MidiDevice>/note069"",
+                    ""path"": ""<MidiDevice>/note093"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1490,7 +1558,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7fd93914-4c9e-49ec-8375-91d5b8b9cbff"",
-                    ""path"": ""<MidiDevice>/note070"",
+                    ""path"": ""<MidiDevice>/note094"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1501,7 +1569,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""dcad6a49-3572-4b89-abb2-bdc15630e47b"",
-                    ""path"": ""<MidiDevice>/note071"",
+                    ""path"": ""<MidiDevice>/note095"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1510,10 +1578,291 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""MidiKeyMap7"",
+            ""id"": ""9ad785d2-1e80-45fb-bd0e-0042f92b1d60"",
+            ""actions"": [
+                {
+                    ""name"": ""C"",
+                    ""type"": ""Button"",
+                    ""id"": ""935709d9-7cfd-4582-9c45-2dff70337bf4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cs"",
+                    ""type"": ""Button"",
+                    ""id"": ""97a5390c-b439-4eaa-b1ca-fc18246228fb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""D"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7ba2284-df95-464d-aeee-a2945eb8ca7b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ds"",
+                    ""type"": ""Button"",
+                    ""id"": ""338550dc-f579-4615-9e74-ce880e1894d1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""E"",
+                    ""type"": ""Button"",
+                    ""id"": ""f257b42a-f370-4591-8160-04fac7cdf6bf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""F"",
+                    ""type"": ""Button"",
+                    ""id"": ""b1117713-8771-46da-90b7-d2f5201b10e8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fs"",
+                    ""type"": ""Button"",
+                    ""id"": ""9c86a3e6-e444-4df7-b695-9c3dfb8e0204"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""G"",
+                    ""type"": ""Button"",
+                    ""id"": ""ed466011-3219-4b89-989e-9aa54a89e2c4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Gs"",
+                    ""type"": ""Button"",
+                    ""id"": ""840f9302-46bf-461b-aada-04013f210c3c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""A"",
+                    ""type"": ""Button"",
+                    ""id"": ""de79a4e4-c6eb-40a1-8e49-30a2ca614d89"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""As"",
+                    ""type"": ""Button"",
+                    ""id"": ""79cbf2fe-6870-4737-a4d5-58f4a3de12e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""B"",
+                    ""type"": ""Button"",
+                    ""id"": ""57edeaef-3b86-457d-8abc-ae0c8fae0b5a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4c1ff3d5-94b0-4e3a-a486-04bb47758527"",
+                    ""path"": ""<MidiDevice>/note096"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""C"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e43fe593-4ba7-48dd-9aa6-dca047946575"",
+                    ""path"": ""<MidiDevice>/note097"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38d48dcf-764a-406a-abb1-e7b8990739ac"",
+                    ""path"": ""<MidiDevice>/note098"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""D"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4ed0a52-9d9b-4011-9553-3230d6aa957c"",
+                    ""path"": ""<MidiDevice>/note099"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ds"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb7a06b3-e35d-43e1-90bc-50a289e591e0"",
+                    ""path"": ""<MidiDevice>/note100"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""E"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6b908dab-a48c-4618-8992-2fb6a4588650"",
+                    ""path"": ""<MidiDevice>/note101"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""F"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4dd693b4-e1b1-45ce-83f3-40062e3293f2"",
+                    ""path"": ""<MidiDevice>/note102"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""72bd56f9-2d7b-4e34-931d-29b0ae348855"",
+                    ""path"": ""<MidiDevice>/note103"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""G"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0bc0d444-e4e0-4f60-becc-89ddfa29565c"",
+                    ""path"": ""<MidiDevice>/note104"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Gs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7da835af-092a-42ff-8c59-d32c6fa6ef92"",
+                    ""path"": ""<MidiDevice>/note105"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c19ed1c5-7aaf-4776-8879-4fbc271cd32e"",
+                    ""path"": ""<MidiDevice>/note106"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""As"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b8af145-5811-4386-b04b-dfc18966ed32"",
+                    ""path"": ""<MidiDevice>/note107"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""B"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""MidiKeyMap8"",
+            ""id"": ""5f3a95b4-d75b-43e2-ae8f-a7044d1a3649"",
+            ""actions"": [
+                {
+                    ""name"": ""C"",
+                    ""type"": ""Button"",
+                    ""id"": ""88f6fbac-d0fd-4ce7-85c6-706d27813234"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""77f1e486-6eda-4a08-a619-97dcd372590e"",
+                    ""path"": ""<MidiDevice>/note108"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""C"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
+        // MidiKeyMap0
+        m_MidiKeyMap0 = asset.FindActionMap("MidiKeyMap0", throwIfNotFound: true);
+        m_MidiKeyMap0_A = m_MidiKeyMap0.FindAction("A", throwIfNotFound: true);
+        m_MidiKeyMap0_As = m_MidiKeyMap0.FindAction("As", throwIfNotFound: true);
+        m_MidiKeyMap0_B = m_MidiKeyMap0.FindAction("B", throwIfNotFound: true);
         // MidiKeyMap1
         m_MidiKeyMap1 = asset.FindActionMap("MidiKeyMap1", throwIfNotFound: true);
         m_MidiKeyMap1_C = m_MidiKeyMap1.FindAction("C", throwIfNotFound: true);
@@ -1598,6 +1947,23 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
         m_MidiKeyMap6_A = m_MidiKeyMap6.FindAction("A", throwIfNotFound: true);
         m_MidiKeyMap6_As = m_MidiKeyMap6.FindAction("As", throwIfNotFound: true);
         m_MidiKeyMap6_B = m_MidiKeyMap6.FindAction("B", throwIfNotFound: true);
+        // MidiKeyMap7
+        m_MidiKeyMap7 = asset.FindActionMap("MidiKeyMap7", throwIfNotFound: true);
+        m_MidiKeyMap7_C = m_MidiKeyMap7.FindAction("C", throwIfNotFound: true);
+        m_MidiKeyMap7_Cs = m_MidiKeyMap7.FindAction("Cs", throwIfNotFound: true);
+        m_MidiKeyMap7_D = m_MidiKeyMap7.FindAction("D", throwIfNotFound: true);
+        m_MidiKeyMap7_Ds = m_MidiKeyMap7.FindAction("Ds", throwIfNotFound: true);
+        m_MidiKeyMap7_E = m_MidiKeyMap7.FindAction("E", throwIfNotFound: true);
+        m_MidiKeyMap7_F = m_MidiKeyMap7.FindAction("F", throwIfNotFound: true);
+        m_MidiKeyMap7_Fs = m_MidiKeyMap7.FindAction("Fs", throwIfNotFound: true);
+        m_MidiKeyMap7_G = m_MidiKeyMap7.FindAction("G", throwIfNotFound: true);
+        m_MidiKeyMap7_Gs = m_MidiKeyMap7.FindAction("Gs", throwIfNotFound: true);
+        m_MidiKeyMap7_A = m_MidiKeyMap7.FindAction("A", throwIfNotFound: true);
+        m_MidiKeyMap7_As = m_MidiKeyMap7.FindAction("As", throwIfNotFound: true);
+        m_MidiKeyMap7_B = m_MidiKeyMap7.FindAction("B", throwIfNotFound: true);
+        // MidiKeyMap8
+        m_MidiKeyMap8 = asset.FindActionMap("MidiKeyMap8", throwIfNotFound: true);
+        m_MidiKeyMap8_C = m_MidiKeyMap8.FindAction("C", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1653,6 +2019,55 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
     {
         return asset.FindBinding(bindingMask, out action);
     }
+
+    // MidiKeyMap0
+    private readonly InputActionMap m_MidiKeyMap0;
+    private IMidiKeyMap0Actions m_MidiKeyMap0ActionsCallbackInterface;
+    private readonly InputAction m_MidiKeyMap0_A;
+    private readonly InputAction m_MidiKeyMap0_As;
+    private readonly InputAction m_MidiKeyMap0_B;
+    public struct MidiKeyMap0Actions
+    {
+        private @MidiKeyInputAction m_Wrapper;
+        public MidiKeyMap0Actions(@MidiKeyInputAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @A => m_Wrapper.m_MidiKeyMap0_A;
+        public InputAction @As => m_Wrapper.m_MidiKeyMap0_As;
+        public InputAction @B => m_Wrapper.m_MidiKeyMap0_B;
+        public InputActionMap Get() { return m_Wrapper.m_MidiKeyMap0; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MidiKeyMap0Actions set) { return set.Get(); }
+        public void SetCallbacks(IMidiKeyMap0Actions instance)
+        {
+            if (m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface != null)
+            {
+                @A.started -= m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface.OnA;
+                @A.performed -= m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface.OnA;
+                @A.canceled -= m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface.OnA;
+                @As.started -= m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface.OnAs;
+                @As.performed -= m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface.OnAs;
+                @As.canceled -= m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface.OnAs;
+                @B.started -= m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface.OnB;
+                @B.performed -= m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface.OnB;
+                @B.canceled -= m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface.OnB;
+            }
+            m_Wrapper.m_MidiKeyMap0ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @A.started += instance.OnA;
+                @A.performed += instance.OnA;
+                @A.canceled += instance.OnA;
+                @As.started += instance.OnAs;
+                @As.performed += instance.OnAs;
+                @As.canceled += instance.OnAs;
+                @B.started += instance.OnB;
+                @B.performed += instance.OnB;
+                @B.canceled += instance.OnB;
+            }
+        }
+    }
+    public MidiKeyMap0Actions @MidiKeyMap0 => new MidiKeyMap0Actions(this);
 
     // MidiKeyMap1
     private readonly InputActionMap m_MidiKeyMap1;
@@ -2379,6 +2794,166 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
         }
     }
     public MidiKeyMap6Actions @MidiKeyMap6 => new MidiKeyMap6Actions(this);
+
+    // MidiKeyMap7
+    private readonly InputActionMap m_MidiKeyMap7;
+    private IMidiKeyMap7Actions m_MidiKeyMap7ActionsCallbackInterface;
+    private readonly InputAction m_MidiKeyMap7_C;
+    private readonly InputAction m_MidiKeyMap7_Cs;
+    private readonly InputAction m_MidiKeyMap7_D;
+    private readonly InputAction m_MidiKeyMap7_Ds;
+    private readonly InputAction m_MidiKeyMap7_E;
+    private readonly InputAction m_MidiKeyMap7_F;
+    private readonly InputAction m_MidiKeyMap7_Fs;
+    private readonly InputAction m_MidiKeyMap7_G;
+    private readonly InputAction m_MidiKeyMap7_Gs;
+    private readonly InputAction m_MidiKeyMap7_A;
+    private readonly InputAction m_MidiKeyMap7_As;
+    private readonly InputAction m_MidiKeyMap7_B;
+    public struct MidiKeyMap7Actions
+    {
+        private @MidiKeyInputAction m_Wrapper;
+        public MidiKeyMap7Actions(@MidiKeyInputAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @C => m_Wrapper.m_MidiKeyMap7_C;
+        public InputAction @Cs => m_Wrapper.m_MidiKeyMap7_Cs;
+        public InputAction @D => m_Wrapper.m_MidiKeyMap7_D;
+        public InputAction @Ds => m_Wrapper.m_MidiKeyMap7_Ds;
+        public InputAction @E => m_Wrapper.m_MidiKeyMap7_E;
+        public InputAction @F => m_Wrapper.m_MidiKeyMap7_F;
+        public InputAction @Fs => m_Wrapper.m_MidiKeyMap7_Fs;
+        public InputAction @G => m_Wrapper.m_MidiKeyMap7_G;
+        public InputAction @Gs => m_Wrapper.m_MidiKeyMap7_Gs;
+        public InputAction @A => m_Wrapper.m_MidiKeyMap7_A;
+        public InputAction @As => m_Wrapper.m_MidiKeyMap7_As;
+        public InputAction @B => m_Wrapper.m_MidiKeyMap7_B;
+        public InputActionMap Get() { return m_Wrapper.m_MidiKeyMap7; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MidiKeyMap7Actions set) { return set.Get(); }
+        public void SetCallbacks(IMidiKeyMap7Actions instance)
+        {
+            if (m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface != null)
+            {
+                @C.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnC;
+                @C.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnC;
+                @C.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnC;
+                @Cs.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnCs;
+                @Cs.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnCs;
+                @Cs.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnCs;
+                @D.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnD;
+                @D.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnD;
+                @D.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnD;
+                @Ds.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnDs;
+                @Ds.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnDs;
+                @Ds.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnDs;
+                @E.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnE;
+                @E.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnE;
+                @E.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnE;
+                @F.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnF;
+                @F.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnF;
+                @F.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnF;
+                @Fs.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnFs;
+                @Fs.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnFs;
+                @Fs.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnFs;
+                @G.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnG;
+                @G.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnG;
+                @G.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnG;
+                @Gs.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnGs;
+                @Gs.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnGs;
+                @Gs.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnGs;
+                @A.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnA;
+                @A.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnA;
+                @A.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnA;
+                @As.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnAs;
+                @As.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnAs;
+                @As.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnAs;
+                @B.started -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnB;
+                @B.performed -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnB;
+                @B.canceled -= m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface.OnB;
+            }
+            m_Wrapper.m_MidiKeyMap7ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @C.started += instance.OnC;
+                @C.performed += instance.OnC;
+                @C.canceled += instance.OnC;
+                @Cs.started += instance.OnCs;
+                @Cs.performed += instance.OnCs;
+                @Cs.canceled += instance.OnCs;
+                @D.started += instance.OnD;
+                @D.performed += instance.OnD;
+                @D.canceled += instance.OnD;
+                @Ds.started += instance.OnDs;
+                @Ds.performed += instance.OnDs;
+                @Ds.canceled += instance.OnDs;
+                @E.started += instance.OnE;
+                @E.performed += instance.OnE;
+                @E.canceled += instance.OnE;
+                @F.started += instance.OnF;
+                @F.performed += instance.OnF;
+                @F.canceled += instance.OnF;
+                @Fs.started += instance.OnFs;
+                @Fs.performed += instance.OnFs;
+                @Fs.canceled += instance.OnFs;
+                @G.started += instance.OnG;
+                @G.performed += instance.OnG;
+                @G.canceled += instance.OnG;
+                @Gs.started += instance.OnGs;
+                @Gs.performed += instance.OnGs;
+                @Gs.canceled += instance.OnGs;
+                @A.started += instance.OnA;
+                @A.performed += instance.OnA;
+                @A.canceled += instance.OnA;
+                @As.started += instance.OnAs;
+                @As.performed += instance.OnAs;
+                @As.canceled += instance.OnAs;
+                @B.started += instance.OnB;
+                @B.performed += instance.OnB;
+                @B.canceled += instance.OnB;
+            }
+        }
+    }
+    public MidiKeyMap7Actions @MidiKeyMap7 => new MidiKeyMap7Actions(this);
+
+    // MidiKeyMap8
+    private readonly InputActionMap m_MidiKeyMap8;
+    private IMidiKeyMap8Actions m_MidiKeyMap8ActionsCallbackInterface;
+    private readonly InputAction m_MidiKeyMap8_C;
+    public struct MidiKeyMap8Actions
+    {
+        private @MidiKeyInputAction m_Wrapper;
+        public MidiKeyMap8Actions(@MidiKeyInputAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @C => m_Wrapper.m_MidiKeyMap8_C;
+        public InputActionMap Get() { return m_Wrapper.m_MidiKeyMap8; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MidiKeyMap8Actions set) { return set.Get(); }
+        public void SetCallbacks(IMidiKeyMap8Actions instance)
+        {
+            if (m_Wrapper.m_MidiKeyMap8ActionsCallbackInterface != null)
+            {
+                @C.started -= m_Wrapper.m_MidiKeyMap8ActionsCallbackInterface.OnC;
+                @C.performed -= m_Wrapper.m_MidiKeyMap8ActionsCallbackInterface.OnC;
+                @C.canceled -= m_Wrapper.m_MidiKeyMap8ActionsCallbackInterface.OnC;
+            }
+            m_Wrapper.m_MidiKeyMap8ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @C.started += instance.OnC;
+                @C.performed += instance.OnC;
+                @C.canceled += instance.OnC;
+            }
+        }
+    }
+    public MidiKeyMap8Actions @MidiKeyMap8 => new MidiKeyMap8Actions(this);
+    public interface IMidiKeyMap0Actions
+    {
+        void OnA(InputAction.CallbackContext context);
+        void OnAs(InputAction.CallbackContext context);
+        void OnB(InputAction.CallbackContext context);
+    }
     public interface IMidiKeyMap1Actions
     {
         void OnC(InputAction.CallbackContext context);
@@ -2468,5 +3043,24 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
         void OnA(InputAction.CallbackContext context);
         void OnAs(InputAction.CallbackContext context);
         void OnB(InputAction.CallbackContext context);
+    }
+    public interface IMidiKeyMap7Actions
+    {
+        void OnC(InputAction.CallbackContext context);
+        void OnCs(InputAction.CallbackContext context);
+        void OnD(InputAction.CallbackContext context);
+        void OnDs(InputAction.CallbackContext context);
+        void OnE(InputAction.CallbackContext context);
+        void OnF(InputAction.CallbackContext context);
+        void OnFs(InputAction.CallbackContext context);
+        void OnG(InputAction.CallbackContext context);
+        void OnGs(InputAction.CallbackContext context);
+        void OnA(InputAction.CallbackContext context);
+        void OnAs(InputAction.CallbackContext context);
+        void OnB(InputAction.CallbackContext context);
+    }
+    public interface IMidiKeyMap8Actions
+    {
+        void OnC(InputAction.CallbackContext context);
     }
 }
