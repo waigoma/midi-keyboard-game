@@ -14,9 +14,15 @@ namespace MidiKeyGame.Scripts.Input
 
             var mkList = new List<MidiKey>
             {
+                new MidiKey0(_inputAction),
+                new MidiKey1(_inputAction),
+                new MidiKey2(_inputAction),
                 new MidiKey3(_inputAction),
                 new MidiKey4(_inputAction),
                 new MidiKey5(_inputAction),
+                new MidiKey6(_inputAction),
+                new MidiKey7(_inputAction),
+                new MidiKey8(_inputAction)
             };
             
             foreach (var mk in mkList) mk.Initialize();
