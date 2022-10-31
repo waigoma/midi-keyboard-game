@@ -59,4 +59,5 @@ sysinfo.txt
 crashlytics-build.properties
 
 .idea/
-UserSettings/*
+UserSettings/
+UserSettings/Layouts/default-2021.dwlt
