@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using MidiKeyGame.Scripts.Object;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace MidiKeyGame.Scripts.Input.Keyboard
@@ -9,63 +10,93 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         protected int octave;
 
         public abstract void Initialize();
+
+        protected void KeyPressed(GameObject gameObject)
+        {
+            gameObject.GetComponent<Renderer>().material = KeyObjectManager.WhiteKeyPressedMaterial;
+        }
+
+        protected void WhiteKeyReleased(GameObject gameObject)
+        {
+            gameObject.GetComponent<Renderer>().material = KeyObjectManager.WhiteKeyNormalMaterial;
+        }
         
-        protected void COnPerformed(InputAction.CallbackContext ctx)
+        protected void BlackKeyReleased(GameObject gameObject)
+        {
+            gameObject.GetComponent<Renderer>().material = KeyObjectManager.BlackKeyNormalMaterial;
+        }
+
+        protected virtual void COnStarted(InputAction.CallbackContext context) {}
+        protected virtual void CsOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void DOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void DsOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void EOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void FOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void FsOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void GOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void GsOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void AOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void AsOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void BOnStarted(InputAction.CallbackContext context) {}
+        
+        protected virtual void COnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void CsOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void DOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void DsOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void EOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void FOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void FsOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void GOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void GsOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void AOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void AsOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void BOnCanceled(InputAction.CallbackContext context) {}
+
+        protected virtual void COnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"C{octave}");
         }
-        
-        protected void CsOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void CsOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"Cs{octave}");
         }
-        
-        protected void DOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void DOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"D{octave}");
         }
-        
-        protected void DsOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void DsOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"Ds{octave}");
         }
-        
-        protected void EOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void EOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"E{octave}");
         }
-        
-        protected void FOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void FOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"F{octave}");
         }
-        
-        protected void FsOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void FsOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"Fs{octave}");
         }
-        
-        protected void GOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void GOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"G{octave}");
         }
-        
-        protected void GsOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void GsOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"Gs{octave}");
         }
-        
-        protected void AOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void AOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"A{octave}");
         }
-        
-        protected void AsOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void AsOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"As{octave}");
         }
-        
-        protected void BOnPerformed(InputAction.CallbackContext ctx)
+        protected virtual void BOnPerformed(InputAction.CallbackContext ctx)
         {
             Debug.Log($"B{octave}");
         }
