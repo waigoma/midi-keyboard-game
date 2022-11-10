@@ -15,29 +15,19 @@ namespace MidiKeyGame.Scripts.Object
         [SerializeField] private GameObject key7;
         [SerializeField] private GameObject key8;
         
-        private readonly Dictionary<string, GameObject> _keys0 = new ();
-        private readonly Dictionary<string, GameObject> _keys1 = new ();
-        private readonly Dictionary<string, GameObject> _keys2 = new ();
-        private readonly Dictionary<string, GameObject> _keys3 = new ();
-        private readonly Dictionary<string, GameObject> _keys4 = new ();
-        private readonly Dictionary<string, GameObject> _keys5 = new ();
-        private readonly Dictionary<string, GameObject> _keys6 = new ();
-        private readonly Dictionary<string, GameObject> _keys7 = new ();
-        private readonly Dictionary<string, GameObject> _keys8 = new ();
-        
         private void Awake()
         {
             var keys = new Dictionary<Dictionary<string, GameObject>, GameObject>
             {
-                {_keys0, key0},
-                {_keys1, key1},
-                {_keys2, key2},
-                {_keys3, key3},
-                {_keys4, key4},
-                {_keys5, key5},
-                {_keys6, key6},
-                {_keys7, key7},
-                {_keys8, key8}
+                {KeyObjectManager.Keys0, key0},
+                {KeyObjectManager.Keys1, key1},
+                {KeyObjectManager.Keys2, key2},
+                {KeyObjectManager.Keys3, key3},
+                {KeyObjectManager.Keys4, key4},
+                {KeyObjectManager.Keys5, key5},
+                {KeyObjectManager.Keys6, key6},
+                {KeyObjectManager.Keys7, key7},
+                {KeyObjectManager.Keys8, key8}
             };
 
             foreach (var (dic, key) in keys)
