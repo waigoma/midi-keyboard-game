@@ -1,75 +1,95 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace MidiKeyGame.Scripts
+namespace MidiKeyGame.Scripts.Object
 {
     public class KeyObjectBehavior : MonoBehaviour
     {
-        [SerializeField] private GameObject a0;
-        [SerializeField] private GameObject as0;
-        [SerializeField] private GameObject b0;
+        [SerializeField] private GameObject key0;
+        [SerializeField] private GameObject key1;
+        [SerializeField] private GameObject key2;
+        [SerializeField] private GameObject key3;
+        [SerializeField] private GameObject key4;
+        [SerializeField] private GameObject key5;
+        [SerializeField] private GameObject key6;
+        [SerializeField] private GameObject key7;
+        [SerializeField] private GameObject key8;
         
-        [SerializeField] private GameObject c1;
-        [SerializeField] private GameObject cs1;
-        [SerializeField] private GameObject d1;
-        [SerializeField] private GameObject ds1;
-        [SerializeField] private GameObject e1;
-        [SerializeField] private GameObject f1;
-        [SerializeField] private GameObject fs1;
-        [SerializeField] private GameObject g1;
-        [SerializeField] private GameObject gs1;
-        [SerializeField] private GameObject a1;
-        [SerializeField] private GameObject as1;
-        [SerializeField] private GameObject b1;
+        private readonly Dictionary<string, GameObject> _keys0 = new ();
+        private readonly Dictionary<string, GameObject> _keys1 = new ();
+        private readonly Dictionary<string, GameObject> _keys2 = new ();
+        private readonly Dictionary<string, GameObject> _keys3 = new ();
+        private readonly Dictionary<string, GameObject> _keys4 = new ();
+        private readonly Dictionary<string, GameObject> _keys5 = new ();
+        private readonly Dictionary<string, GameObject> _keys6 = new ();
+        private readonly Dictionary<string, GameObject> _keys7 = new ();
+        private readonly Dictionary<string, GameObject> _keys8 = new ();
         
-        [SerializeField] private GameObject c2;
-        [SerializeField] private GameObject cs2;
-        [SerializeField] private GameObject d2;
-        [SerializeField] private GameObject ds2;
-        [SerializeField] private GameObject e2;
-        [SerializeField] private GameObject f2;
-        [SerializeField] private GameObject fs2;
-        [SerializeField] private GameObject g2;
-        [SerializeField] private GameObject gs2;
-        [SerializeField] private GameObject a2;
-        [SerializeField] private GameObject as2;
-        [SerializeField] private GameObject b2;
-        
-        [SerializeField] private GameObject c3;
-        [SerializeField] private GameObject cs3;
-        [SerializeField] private GameObject d3;
-        [SerializeField] private GameObject ds3;
-        [SerializeField] private GameObject e3;
-        [SerializeField] private GameObject f3;
-        [SerializeField] private GameObject fs3;
-        [SerializeField] private GameObject g3;
-        [SerializeField] private GameObject gs3;
-        [SerializeField] private GameObject a3;
-        [SerializeField] private GameObject as3;
-        [SerializeField] private GameObject b3;
-        
-        [SerializeField] private GameObject c4;
-        [SerializeField] private GameObject cs4;
-        [SerializeField] private GameObject d4;
-        [SerializeField] private GameObject ds4;
-        [SerializeField] private GameObject e4;
-        [SerializeField] private GameObject f4;
-        [SerializeField] private GameObject fs4;
-        [SerializeField] private GameObject g4;
-        [SerializeField] private GameObject gs4;
-        [SerializeField] private GameObject a4;
-        [SerializeField] private GameObject as4;
-        [SerializeField] private GameObject b4;
-        
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
-        
-        }
+            var keys = new Dictionary<Dictionary<string, GameObject>, GameObject>
+            {
+                {_keys0, key0},
+                {_keys1, key1},
+                {_keys2, key2},
+                {_keys3, key3},
+                {_keys4, key4},
+                {_keys5, key5},
+                {_keys6, key6},
+                {_keys7, key7},
+                {_keys8, key8}
+            };
 
-        // Update is called once per frame
-        void Update()
-        {
-        
+            foreach (var (dic, key) in keys)
+            {
+                var children = key.GetComponentInChildren<Transform>();
+
+                if (children.childCount == 0) 
+                    return;
+
+                foreach (Transform child in children)
+                {
+                    switch (child.name)
+                    {
+                        case "C":
+                           dic["C"] = child.gameObject;
+                            break;
+                        case "C#":
+                            dic["C#"] = child.gameObject;
+                            break;
+                        case "D":
+                            dic["D"] = child.gameObject;
+                            break;
+                        case "D#":
+                            dic["D#"] = child.gameObject;
+                            break;
+                        case "E":
+                            dic["E"] = child.gameObject;
+                            break;
+                        case "F":
+                            dic["F"] = child.gameObject;
+                            break;
+                        case "F#":
+                            dic["F#"] = child.gameObject;
+                            break;
+                        case "G":
+                            dic["G"] = child.gameObject;
+                            break;
+                        case "G#":
+                            dic["G#"] = child.gameObject;
+                            break;
+                        case "A":
+                            dic["A"] = child.gameObject;
+                            break;
+                        case "A#":
+                            dic["A#"] = child.gameObject;
+                            break;
+                        case "B":
+                            dic["B"] = child.gameObject;
+                            break;
+                    }
+                }
+            }
         }
     }
 }
