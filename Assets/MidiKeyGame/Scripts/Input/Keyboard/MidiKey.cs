@@ -9,6 +9,19 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         protected MidiKeyInputAction inputAction;
         protected int octave;
 
+        protected GameObject objC;
+        protected GameObject objCs;
+        protected GameObject objD;
+        protected GameObject objDs;
+        protected GameObject objE;
+        protected GameObject objF;
+        protected GameObject objFs;
+        protected GameObject objG;
+        protected GameObject objGs;
+        protected GameObject objA;
+        protected GameObject objAs;
+        protected GameObject objB;
+
         public abstract void Initialize();
 
         protected void KeyPressed(GameObject gameObject)
@@ -26,31 +39,125 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
             gameObject.GetComponent<Renderer>().material = KeyObjectManager.BlackKeyNormalMaterial;
         }
 
-        protected virtual void COnStarted(InputAction.CallbackContext context) {}
-        protected virtual void CsOnStarted(InputAction.CallbackContext context) {}
-        protected virtual void DOnStarted(InputAction.CallbackContext context) {}
-        protected virtual void DsOnStarted(InputAction.CallbackContext context) {}
-        protected virtual void EOnStarted(InputAction.CallbackContext context) {}
-        protected virtual void FOnStarted(InputAction.CallbackContext context) {}
-        protected virtual void FsOnStarted(InputAction.CallbackContext context) {}
-        protected virtual void GOnStarted(InputAction.CallbackContext context) {}
-        protected virtual void GsOnStarted(InputAction.CallbackContext context) {}
-        protected virtual void AOnStarted(InputAction.CallbackContext context) {}
-        protected virtual void AsOnStarted(InputAction.CallbackContext context) {}
-        protected virtual void BOnStarted(InputAction.CallbackContext context) {}
+        protected virtual void COnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objC);
+        }
+
+        protected virtual void CsOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objCs);
+        }
+
+        protected virtual void DOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objD);
+        }
+
+        protected virtual void DsOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objDs);
+        }
+
+        protected virtual void EOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objE);
+        }
+
+        protected virtual void FOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objF);
+        }
+
+        protected virtual void FsOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objFs);
+        }
+
+        protected virtual void GOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objG);
+        }
+
+        protected virtual void GsOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objGs);
+        }
+
+        protected virtual void AOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objA);
+        }
+
+        protected virtual void AsOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objAs);
+        }
+
+        protected virtual void BOnStarted(InputAction.CallbackContext context)
+        {
+            KeyPressed(objB);
+        }
         
-        protected virtual void COnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void CsOnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void DOnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void DsOnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void EOnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void FOnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void FsOnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void GOnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void GsOnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void AOnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void AsOnCanceled(InputAction.CallbackContext context) {}
-        protected virtual void BOnCanceled(InputAction.CallbackContext context) {}
+        protected virtual void COnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objC);
+        }
+
+        protected virtual void CsOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objCs);
+        }
+
+        protected virtual void DOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objD);
+        }
+
+        protected virtual void DsOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objDs);
+        }
+
+        protected virtual void EOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objE);
+        }
+
+        protected virtual void FOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objF);
+        }
+
+        protected virtual void FsOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objFs);
+        }
+
+        protected virtual void GOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objG);
+        }
+
+        protected virtual void GsOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objGs);
+        }
+
+        protected virtual void AOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objA);
+        }
+
+        protected virtual void AsOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objAs);
+        }
+
+        protected virtual void BOnCanceled(InputAction.CallbackContext context)
+        {
+            KeyPressed(objB);
+        }
 
         protected virtual void COnPerformed(InputAction.CallbackContext ctx)
         {
