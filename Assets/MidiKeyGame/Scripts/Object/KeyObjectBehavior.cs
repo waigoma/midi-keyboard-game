@@ -21,6 +21,10 @@ namespace MidiKeyGame.Scripts.Object
 
         private void Awake()
         {
+            KeyObjectManager.SetWhiteKeyNormalMaterial(whiteNormalMaterial);
+            KeyObjectManager.SetBlackKeyNormalMaterial(blackNormalMaterial);
+            KeyObjectManager.SetWhiteKeyPressedMaterial(whitePressedMaterial);
+            
             var keys = new Dictionary<Dictionary<string, GameObject>, GameObject>
             {
                 {KeyObjectManager.Keys0, key0},
