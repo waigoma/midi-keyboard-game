@@ -14,7 +14,11 @@ namespace MidiKeyGame.Scripts.Object
         [SerializeField] private GameObject key6;
         [SerializeField] private GameObject key7;
         [SerializeField] private GameObject key8;
-        
+
+        [SerializeField] private Material whiteNormalMaterial;
+        [SerializeField] private Material blackNormalMaterial;
+        [SerializeField] private Material whitePressedMaterial;
+
         private void Awake()
         {
             var keys = new Dictionary<Dictionary<string, GameObject>, GameObject>
