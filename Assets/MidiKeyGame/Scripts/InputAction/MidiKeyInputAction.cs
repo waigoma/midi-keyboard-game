@@ -511,7 +511,7 @@ public partial class @MidiKeyInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4b247eed-0f2c-4d8f-8aa6-a6f94374f987"",
-                    ""path"": ""<Keyboard>/f2"",
+                    ""path"": ""<MidiDevice>/note041"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
