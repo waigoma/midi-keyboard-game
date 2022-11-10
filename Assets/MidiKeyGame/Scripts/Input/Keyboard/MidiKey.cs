@@ -26,8 +26,7 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
 
         private void KeyPressed(GameObject gameObject)
         {
-            var r = gameObject.GetComponent<MeshRenderer>();
-            r.material = KeyObjectManager.WhiteKeyPressedMaterial;
+            gameObject.GetComponent<MeshRenderer>().material = KeyObjectManager.WhiteKeyPressedMaterial;
         }
 
         private void WhiteKeyReleased(GameObject gameObject)
