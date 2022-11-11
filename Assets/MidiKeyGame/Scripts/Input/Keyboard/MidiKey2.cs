@@ -6,27 +6,27 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
     {
         public MidiKey2(MidiKeyInputAction inputAction)
         {
-            this.inputAction = inputAction;
-            octave = 2;
+            this.InputAction = inputAction;
+            Octave = 2;
             
             var keys = KeyObjectManager.Keys2;
-            objC = keys["C"];
-            objCs = keys["C#"];
-            objD = keys["D"];
-            objDs = keys["D#"];
-            objE = keys["E"];
-            objF = keys["F"];
-            objFs = keys["F#"];
-            objG = keys["G"];
-            objGs = keys["G#"];
-            objA = keys["A"];
-            objAs = keys["A#"];
-            objB = keys["B"];
+            ObjC = keys["C"];
+            ObjCs = keys["C#"];
+            ObjD = keys["D"];
+            ObjDs = keys["D#"];
+            ObjE = keys["E"];
+            ObjF = keys["F"];
+            ObjFs = keys["F#"];
+            ObjG = keys["G"];
+            ObjGs = keys["G#"];
+            ObjA = keys["A"];
+            ObjAs = keys["A#"];
+            ObjB = keys["B"];
         }
         
         public override void Initialize()
         {
-            var mkm = inputAction.MidiKeyMap2;
+            var mkm = InputAction.MidiKeyMap2;
             mkm.C.started += COnStarted;
             mkm.Cs.started += CsOnStarted;
             mkm.D.started += DOnStarted;

@@ -6,18 +6,18 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
     {
         public MidiKey0(MidiKeyInputAction inputAction)
         {
-            this.inputAction = inputAction;
-            octave = 0;
+            this.InputAction = inputAction;
+            Octave = 0;
 
             var keys = KeyObjectManager.Keys0;
-            objA = keys["A"];
-            objAs = keys["A#"];
-            objB = keys["B"];
+            ObjA = keys["A"];
+            ObjAs = keys["A#"];
+            ObjB = keys["B"];
         }
         
         public override void Initialize()
         {
-            var mkm = inputAction.MidiKeyMap0;
+            var mkm = InputAction.MidiKeyMap0;
             mkm.A.started += AOnStarted;
             mkm.As.started += AsOnStarted;
             mkm.B.started += BOnStarted;

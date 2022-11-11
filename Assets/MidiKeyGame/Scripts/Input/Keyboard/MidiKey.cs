@@ -6,21 +6,21 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
 {
     public abstract class MidiKey
     {
-        protected MidiKeyInputAction inputAction;
-        protected int octave;
+        protected MidiKeyInputAction InputAction;
+        protected int Octave;
 
-        protected GameObject objC;
-        protected GameObject objCs;
-        protected GameObject objD;
-        protected GameObject objDs;
-        protected GameObject objE;
-        protected GameObject objF;
-        protected GameObject objFs;
-        protected GameObject objG;
-        protected GameObject objGs;
-        protected GameObject objA;
-        protected GameObject objAs;
-        protected GameObject objB;
+        protected GameObject ObjC;
+        protected GameObject ObjCs;
+        protected GameObject ObjD;
+        protected GameObject ObjDs;
+        protected GameObject ObjE;
+        protected GameObject ObjF;
+        protected GameObject ObjFs;
+        protected GameObject ObjG;
+        protected GameObject ObjGs;
+        protected GameObject ObjA;
+        protected GameObject ObjAs;
+        protected GameObject ObjB;
 
         public abstract void Initialize();
 
@@ -42,151 +42,151 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         // キーが押されたとき OnStarted
         protected virtual void COnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objC);
+            KeyPressed(ObjC);
         }
         protected virtual void CsOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objCs);
+            KeyPressed(ObjCs);
         }
         protected virtual void DOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objD);
+            KeyPressed(ObjD);
         }
         protected virtual void DsOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objDs);
+            KeyPressed(ObjDs);
         }
         protected virtual void EOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objE);
+            KeyPressed(ObjE);
         }
         protected virtual void FOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objF);
+            KeyPressed(ObjF);
         }
         protected virtual void FsOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objFs);
+            KeyPressed(ObjFs);
         }
         protected virtual void GOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objG);
+            KeyPressed(ObjG);
         }
         protected virtual void GsOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objGs);
+            KeyPressed(ObjGs);
         }
         protected virtual void AOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objA);
+            KeyPressed(ObjA);
         }
         protected virtual void AsOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objAs);
+            KeyPressed(ObjAs);
         }
         protected virtual void BOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(objB);
+            KeyPressed(ObjB);
         }
         
         // キーが離されたとき OnCanceled
         protected virtual void COnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(objC);
+            WhiteKeyReleased(ObjC);
         }
         protected virtual void CsOnCanceled(InputAction.CallbackContext context)
         {
-            BlackKeyReleased(objCs);
+            BlackKeyReleased(ObjCs);
         }
         protected virtual void DOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(objD);
+            WhiteKeyReleased(ObjD);
         }
         protected virtual void DsOnCanceled(InputAction.CallbackContext context)
         {
-            BlackKeyReleased(objDs);
+            BlackKeyReleased(ObjDs);
         }
         protected virtual void EOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(objE);
+            WhiteKeyReleased(ObjE);
         }
         protected virtual void FOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(objF);
+            WhiteKeyReleased(ObjF);
         }
         protected virtual void FsOnCanceled(InputAction.CallbackContext context)
         {
-            BlackKeyReleased(objFs);
+            BlackKeyReleased(ObjFs);
         }
         protected virtual void GOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(objG);
+            WhiteKeyReleased(ObjG);
         }
         protected virtual void GsOnCanceled(InputAction.CallbackContext context)
         {
-            BlackKeyReleased(objGs);
+            BlackKeyReleased(ObjGs);
         }
         protected virtual void AOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(objA);
+            WhiteKeyReleased(ObjA);
         }
         protected virtual void AsOnCanceled(InputAction.CallbackContext context)
         {
-            BlackKeyReleased(objAs);
+            BlackKeyReleased(ObjAs);
         }
         protected virtual void BOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(objB);
+            WhiteKeyReleased(ObjB);
         }
 
         // デバッグ用 OnPerformed
         protected virtual void COnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"C{octave}");
+            Debug.Log($"C{Octave}");
         }
         protected virtual void CsOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"Cs{octave}");
+            Debug.Log($"Cs{Octave}");
         }
         protected virtual void DOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"D{octave}");
+            Debug.Log($"D{Octave}");
         }
         protected virtual void DsOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"Ds{octave}");
+            Debug.Log($"Ds{Octave}");
         }
         protected virtual void EOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"E{octave}");
+            Debug.Log($"E{Octave}");
         }
         protected virtual void FOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"F{octave}");
+            Debug.Log($"F{Octave}");
         }
         protected virtual void FsOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"Fs{octave}");
+            Debug.Log($"Fs{Octave}");
         }
         protected virtual void GOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"G{octave}");
+            Debug.Log($"G{Octave}");
         }
         protected virtual void GsOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"Gs{octave}");
+            Debug.Log($"Gs{Octave}");
         }
         protected virtual void AOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"A{octave}");
+            Debug.Log($"A{Octave}");
         }
         protected virtual void AsOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"As{octave}");
+            Debug.Log($"As{Octave}");
         }
         protected virtual void BOnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"B{octave}");
+            Debug.Log($"B{Octave}");
         }
     }
 }
