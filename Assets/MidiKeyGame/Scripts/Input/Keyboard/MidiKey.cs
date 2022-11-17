@@ -1,4 +1,5 @@
-﻿using MidiKeyGame.Scripts.Object;
+﻿using MeltySynth;
+using MidiKeyGame.Scripts.Object;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,71 +23,97 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         protected GameObject ObjAs;
         protected GameObject ObjB;
 
+        private const int SampleRate = 44100;
+        private const int Length = 10;
+        
+        private readonly Synthesizer _synth = new ("./Assets/MidiKeyGame/SoundFont/Equinox_Grand_Pianos.sf2", SampleRate);
+        
         public abstract void Initialize();
 
-        private void KeyPressed(GameObject gameObject)
+        private void KeyPressed(GameObject gameObject, int pos)
         {
             gameObject.GetComponent<MeshRenderer>().material = KeyObjectManager.WhiteKeyPressedMaterial;
+            _synth.NoteOn(0, pos, 100);
+            
+            var left = new float[Length * SampleRate];
+            var right = new float[Length * SampleRate];
+            _synth.Render(left, right);
+            
+            var clip = AudioClip.Create($"{gameObject.name}{Octave}", Length * SampleRate, 2, SampleRate, false);
+            clip.SetData(left, 0);
+
+            var audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.clip = clip;
+            
+            audioSource.Play();
+            _synth.NoteOffAll(false);
+        }
+        
+        private void KeyReleased(GameObject gameObject)
+        {
+            gameObject.GetComponent<AudioSource>().Stop();
         }
 
         private void WhiteKeyReleased(GameObject gameObject)
         {
+            KeyReleased(gameObject);
             gameObject.GetComponent<MeshRenderer>().material = KeyObjectManager.WhiteKeyNormalMaterial;
         }
         
         private void BlackKeyReleased(GameObject gameObject)
         {
+            KeyReleased(gameObject);
             gameObject.GetComponent<MeshRenderer>().material = KeyObjectManager.BlackKeyNormalMaterial;
         }
 
         // キーが押されたとき OnStarted
         protected virtual void COnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjC);
+            KeyPressed(ObjC, 60 - 12 * (4 - Octave));
         }
         protected virtual void CsOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjCs);
+            KeyPressed(ObjCs, 61 - 12 * (4 - Octave));
         }
         protected virtual void DOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjD);
+            KeyPressed(ObjD, 62 - 12 * (4 - Octave));
         }
         protected virtual void DsOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjDs);
+            KeyPressed(ObjDs, 63 - 12 * (4 - Octave));
         }
         protected virtual void EOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjE);
+            KeyPressed(ObjE, 64 - 12 * (4 - Octave));
         }
         protected virtual void FOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjF);
+            KeyPressed(ObjF, 65 - 12 * (4 - Octave));
         }
         protected virtual void FsOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjFs);
+            KeyPressed(ObjFs, 66 - 12 * (4 - Octave));
         }
         protected virtual void GOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjG);
+            KeyPressed(ObjG, 67 - 12 * (4 - Octave));
         }
         protected virtual void GsOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjGs);
+            KeyPressed(ObjGs, 68 - 12 * (4 - Octave));
         }
         protected virtual void AOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjA);
+            KeyPressed(ObjA, 69 - 12 * (4 - Octave));
         }
         protected virtual void AsOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjAs);
+            KeyPressed(ObjAs, 70 - 12 * (4 - Octave));
         }
         protected virtual void BOnStarted(InputAction.CallbackContext context)
         {
-            KeyPressed(ObjB);
+            KeyPressed(ObjB, 71 - 12 * (4 - Octave));
         }
         
         // キーが離されたとき OnCanceled
