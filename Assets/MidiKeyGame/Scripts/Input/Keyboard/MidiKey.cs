@@ -24,30 +24,20 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         protected GameObject ObjB;
 
         private readonly KeyAudio _keyAudio = new ();
+        private readonly KeyMaterial _keyMaterial = new ();
         
         public abstract void Initialize();
 
         private void KeyPressed(GameObject gameObject, int pos)
         {
-            gameObject.GetComponent<MeshRenderer>().material = KeyObjectManager.WhiteKeyPressedMaterial;
+            _keyMaterial.Pressed(gameObject);
             _keyAudio.Play(gameObject, pos);
         }
         
         private void KeyReleased(GameObject gameObject)
         {
+            _keyMaterial.Released(gameObject);
             _keyAudio.Stop(gameObject);
-        }
-
-        private void WhiteKeyReleased(GameObject gameObject)
-        {
-            KeyReleased(gameObject);
-            gameObject.GetComponent<MeshRenderer>().material = KeyObjectManager.WhiteKeyNormalMaterial;
-        }
-        
-        private void BlackKeyReleased(GameObject gameObject)
-        {
-            KeyReleased(gameObject);
-            gameObject.GetComponent<MeshRenderer>().material = KeyObjectManager.BlackKeyNormalMaterial;
         }
 
         // キーが押されたとき OnStarted
@@ -103,51 +93,51 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         // キーが離されたとき OnCanceled
         protected virtual void COnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(ObjC);
+            KeyReleased(ObjC);
         }
         protected virtual void CsOnCanceled(InputAction.CallbackContext context)
         {
-            BlackKeyReleased(ObjCs);
+            KeyReleased(ObjCs);
         }
         protected virtual void DOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(ObjD);
+            KeyReleased(ObjD);
         }
         protected virtual void DsOnCanceled(InputAction.CallbackContext context)
         {
-            BlackKeyReleased(ObjDs);
+            KeyReleased(ObjDs);
         }
         protected virtual void EOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(ObjE);
+            KeyReleased(ObjE);
         }
         protected virtual void FOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(ObjF);
+            KeyReleased(ObjF);
         }
         protected virtual void FsOnCanceled(InputAction.CallbackContext context)
         {
-            BlackKeyReleased(ObjFs);
+            KeyReleased(ObjFs);
         }
         protected virtual void GOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(ObjG);
+            KeyReleased(ObjG);
         }
         protected virtual void GsOnCanceled(InputAction.CallbackContext context)
         {
-            BlackKeyReleased(ObjGs);
+            KeyReleased(ObjGs);
         }
         protected virtual void AOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(ObjA);
+            KeyReleased(ObjA);
         }
         protected virtual void AsOnCanceled(InputAction.CallbackContext context)
         {
-            BlackKeyReleased(ObjAs);
+            KeyReleased(ObjAs);
         }
         protected virtual void BOnCanceled(InputAction.CallbackContext context)
         {
-            WhiteKeyReleased(ObjB);
+            KeyReleased(ObjB);
         }
 
         // デバッグ用 OnPerformed
