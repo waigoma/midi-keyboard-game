@@ -31,17 +31,6 @@ namespace MidiKeyGame.Scripts.Input
             foreach (var mk in mkList) mk.Initialize();
             
             _inputAction.Enable();
-            
-            var synth = new Synthesizer("./Assets/MidiKeyGame/SoundFont/Equinox_Grand_Pianos.sf2", 44100);
-            synth.NoteOn(0, 60, 50);
-            
-            var left = new float[3*44100];
-            var right = new float[3*44100];
-            
-            synth.Render(left, right);
-            
-            synth.NoteOff(0, 60);
-            Debug.Log($"left: {left}, right: {right}");
         }
     }
 
