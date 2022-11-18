@@ -12,7 +12,23 @@ namespace MidiKeyGame.Scripts.Audio
         
         private readonly Synthesizer _synthesizer = new (SoundFont, SampleRate);
 
-        public AudioClip CreateAudio(int noteNumber, string name)
+        public void Play(GameObject gameObject, int noteNumber)
+        {
+            var audioData = Create(noteNumber, $"{gameObject.name}_{noteNumber}");
+            
+            var audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.clip = audioData;
+            
+            audioSource.Play();
+        }
+        
+        public void Stop(GameObject gameObject)
+        {
+            var audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.Stop();
+        }
+        
+        private AudioClip Create(int noteNumber, string name)
         {
             var audioData = RenderAudio(noteNumber);
             
