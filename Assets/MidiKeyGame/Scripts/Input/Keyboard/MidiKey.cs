@@ -35,7 +35,7 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         
         private void KeyReleased(GameObject gameObject)
         {
-            gameObject.GetComponent<AudioSource>().Stop();
+            _keyAudio.Stop(gameObject);
         }
 
         private void WhiteKeyReleased(GameObject gameObject)
