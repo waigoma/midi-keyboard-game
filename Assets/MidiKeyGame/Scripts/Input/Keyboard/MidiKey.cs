@@ -1,4 +1,4 @@
-﻿using MeltySynth;
+﻿using MidiKeyGame.Scripts.Audio;
 using MidiKeyGame.Scripts.Object;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,30 +23,14 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         protected GameObject ObjAs;
         protected GameObject ObjB;
 
-        private const int SampleRate = 44100;
-        private const int Length = 10;
-        
-        private readonly Synthesizer _synth = new ("./Assets/MidiKeyGame/SoundFont/Equinox_Grand_Pianos.sf2", SampleRate);
+        private readonly KeyAudio _keyAudio = new ();
         
         public abstract void Initialize();
 
         private void KeyPressed(GameObject gameObject, int pos)
         {
             gameObject.GetComponent<MeshRenderer>().material = KeyObjectManager.WhiteKeyPressedMaterial;
-            _synth.NoteOn(0, pos, 100);
-            
-            var left = new float[Length * SampleRate];
-            var right = new float[Length * SampleRate];
-            _synth.Render(left, right);
-            
-            var clip = AudioClip.Create($"{gameObject.name}{Octave}", Length * SampleRate, 2, SampleRate, false);
-            clip.SetData(left, 0);
-
-            var audioSource = gameObject.GetComponent<AudioSource>();
-            audioSource.clip = clip;
-            
-            audioSource.Play();
-            _synth.NoteOffAll(false);
+            _keyAudio.Play(gameObject, pos);
         }
         
         private void KeyReleased(GameObject gameObject)
