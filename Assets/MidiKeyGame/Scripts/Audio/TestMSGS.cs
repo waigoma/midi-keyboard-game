@@ -1,16 +1,19 @@
-﻿using System;
-using MidiJack;
+﻿using MidiJack;
 using UnityEngine;
 
 namespace MidiKeyGame.Scripts.Audio
 {
     public class TestMSGS : MonoBehaviour
     {
-        private MidiDriver _driver;
         
         private void Awake()
         {
-            _driver = MidiDriver.Instance;
+            MidiMaster.GetKey(MidiChannel.All, 0);
+        }
+
+        private void Update()
+        {
+            Debug.Log(MidiMaster.GetKey(MidiChannel.All, 60));
         }
     }
 }
