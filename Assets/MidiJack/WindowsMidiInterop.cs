@@ -23,9 +23,9 @@ namespace MidiJack
         }
 
         //NOTE: message ulong style accords to original MidiJack native
-        private readonly ConcurrentQueue<ulong> _midiMessageQueue = new ConcurrentQueue<ulong>();
-        private readonly ConcurrentStack<IntPtr> _handleToClose = new ConcurrentStack<IntPtr>();
-        private readonly HashSet<IntPtr> _activeHandles = new HashSet<IntPtr>();
+        private readonly ConcurrentQueue<ulong> _midiMessageQueue = new ();
+        private readonly ConcurrentStack<IntPtr> _handleToClose = new ();
+        private readonly HashSet<IntPtr> _activeHandles = new ();
 
         public bool IsActive { get; private set; } = true;
         
@@ -97,7 +97,7 @@ namespace MidiJack
         
         private void OpenAllDevices()
         {
-            uint deviceCount = NativeMethods.midiInGetNumDevs();
+            var deviceCount = NativeMethods.midiInGetNumDevs();
             for (uint i = 0; i < deviceCount; i++)
             {
                 OpenDevice(i);
@@ -106,7 +106,7 @@ namespace MidiJack
 
         private void OpenDevice(uint id)
         {
-            uint err = NativeMethods.midiInOpen(out IntPtr handle, id, _midiInProc);
+            var err = NativeMethods.midiInOpen(out IntPtr handle, id, _midiInProc);
             if (err != NativeMethods.MMSYSERR_NOERROR)
             {
                 return;
@@ -126,8 +126,8 @@ namespace MidiJack
         {
             if (wMsg == NativeMethods.MIM_DATA)
             {
-                uint id = (uint)hMidiIn.ToInt32();
-                uint raw = (uint)dwParam1.ToInt32();
+                var id = (uint) hMidiIn.ToInt32();
+                var raw = (uint) dwParam1.ToInt32();
                 _midiMessageQueue.Enqueue(CreateMidiMessage(id, raw));
             }
             else if (wMsg == NativeMethods.MIM_CLOSE)
@@ -139,9 +139,9 @@ namespace MidiJack
         //note: this message encoding accords to original MidiJack
         private ulong CreateMidiMessage(uint id, uint raw)
         {
-            byte status = (byte)(raw & 0xff);
-            byte data1 = (byte)((raw >> 8) & 0xff);
-            byte data2 = (byte)((raw >> 16) & 0xff);
+            var status = (byte)(raw & 0xff);
+            var data1 = (byte)((raw >> 8) & 0xff);
+            var data2 = (byte)((raw >> 16) & 0xff);
             
             ulong result = id;
             result |= (ulong)status << 32;
@@ -154,6 +154,9 @@ namespace MidiJack
         public static class NativeMethods
         {
             private const int CALLBACK_FUNCTION = 0x30000;
+            public const int MMSYSERR_NOERROR = 0;
+            public const int MIM_CLOSE = 0x3C2;
+            public const int MIM_DATA = 0x3C3;
             
             /// <summary>
             /// Callback function signature when received MIDI input.
@@ -216,10 +219,6 @@ namespace MidiJack
             /// <returns></returns>
             [DllImport("winmm.dll")]
             public static extern uint midiInClose(IntPtr hMidiIn);
-            
-            public const int MMSYSERR_NOERROR = 0;
-            public const int MIM_CLOSE = 0x3C2;
-            public const int MIM_DATA = 0x3C3;
         } 
     }
 }

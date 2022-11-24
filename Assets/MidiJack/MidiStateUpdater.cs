@@ -28,6 +28,8 @@ namespace MidiJack
     public class MidiStateUpdater : MonoBehaviour
     {
         public delegate void Callback();
+        
+        private Callback _callback;
 
         public static void CreateGameObject(Callback callback)
         {
@@ -40,9 +42,7 @@ namespace MidiJack
             updater._callback = callback;
         }
 
-        Callback _callback;
-
-        void Update()
+        private void Update()
         {
             _callback();
         }

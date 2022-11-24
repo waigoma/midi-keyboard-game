@@ -31,13 +31,13 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         private void KeyPressed(GameObject gameObject, int pos)
         {
             _keyMaterial.Pressed(gameObject);
-            _keyAudio.Play(gameObject, pos);
+            // _keyAudio.Play(gameObject, pos);
         }
         
         private void KeyReleased(GameObject gameObject)
         {
             _keyMaterial.Released(gameObject);
-            _keyAudio.Stop(gameObject);
+            // _keyAudio.Stop(gameObject);
         }
 
         // キーが押されたとき OnStarted

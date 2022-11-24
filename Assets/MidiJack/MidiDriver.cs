@@ -31,7 +31,7 @@ namespace MidiJack
     {
         #region Internal Data
 
-        class ChannelState
+        private class ChannelState
         {
             // Note state array
             // X<0    : Released on this frame
@@ -39,23 +39,23 @@ namespace MidiJack
             // 0<X<=1 : On (X represents velocity)
             // 1<X<=2 : Triggered on this frame
             //          (X-1 represents velocity)
-            public float[] _noteArray;
+            public readonly float[] noteArray;
 
             // Knob number to knob value mapping
-            public Dictionary<int, float> _knobMap;
+            public readonly Dictionary<int, float> knobMap;
 
             public ChannelState()
             {
-                _noteArray = new float[128];
-                _knobMap = new Dictionary<int, float>();
+                noteArray = new float[128];
+                knobMap = new Dictionary<int, float>();
             }
         }
 
         // Channel state array
-        ChannelState[] _channelArray;
+        private ChannelState[] _channelArray;
 
         // Last update frame number
-        int _lastFrame;
+        private int _lastFrame;
 
         #endregion
 
@@ -64,7 +64,7 @@ namespace MidiJack
         public float GetKey(MidiChannel channel, int noteNumber)
         {
             UpdateIfNeeded();
-            var v = _channelArray[(int)channel]._noteArray[noteNumber];
+            var v = _channelArray[(int)channel].noteArray[noteNumber];
             if (v > 1) return v - 1;
             if (v > 0) return v;
             return 0.0f;
@@ -73,21 +73,21 @@ namespace MidiJack
         public bool GetKeyDown(MidiChannel channel, int noteNumber)
         {
             UpdateIfNeeded();
-            return _channelArray[(int)channel]._noteArray[noteNumber] > 1;
+            return _channelArray[(int)channel].noteArray[noteNumber] > 1;
         }
 
         public bool GetKeyUp(MidiChannel channel, int noteNumber)
         {
             UpdateIfNeeded();
-            return _channelArray[(int)channel]._noteArray[noteNumber] < 0;
+            return _channelArray[(int)channel].noteArray[noteNumber] < 0;
         }
 
         public int[] GetKnobNumbers(MidiChannel channel)
         {
             UpdateIfNeeded();
             var cs = _channelArray[(int)channel];
-            var numbers = new int[cs._knobMap.Count];
-            cs._knobMap.Keys.CopyTo(numbers, 0);
+            var numbers = new int[cs.knobMap.Count];
+            cs.knobMap.Keys.CopyTo(numbers, 0);
             return numbers;
         }
 
@@ -95,7 +95,7 @@ namespace MidiJack
         {
             UpdateIfNeeded();
             var cs = _channelArray[(int)channel];
-            if (cs._knobMap.ContainsKey(knobNumber)) return cs._knobMap[knobNumber];
+            if (cs.knobMap.ContainsKey(knobNumber)) return cs.knobMap[knobNumber];
             return defaultValue;
         }
 
@@ -118,13 +118,13 @@ namespace MidiJack
         #if UNITY_EDITOR
 
         // Update timer
-        const float _updateInterval = 1.0f / 30;
-        float _lastUpdateTime;
+        private const float UpdateInterval = 1.0f / 30;
+        private float _lastUpdateTime;
 
-        bool CheckUpdateInterval()
+        private bool CheckUpdateInterval()
         {
             var current = Time.realtimeSinceStartup;
-            if (current - _lastUpdateTime > _updateInterval || current < _lastUpdateTime) {
+            if (current - _lastUpdateTime > UpdateInterval || current < _lastUpdateTime) {
                 _lastUpdateTime = current;
                 return true;
             }
@@ -132,7 +132,7 @@ namespace MidiJack
         }
 
         // Total message count
-        int _totalMessageCount;
+        private int _totalMessageCount;
 
         public int TotalMessageCount {
             get {
@@ -142,7 +142,7 @@ namespace MidiJack
         }
 
         // Message history
-        Queue<MidiMessage> _messageHistory;
+        private Queue<MidiMessage> _messageHistory;
 
         public Queue<MidiMessage> History {
             get { return _messageHistory; }
@@ -154,7 +154,7 @@ namespace MidiJack
 
         #region Public Methods
 
-        MidiDriver()
+        public MidiDriver()
         {
             _channelArray = new ChannelState[17];
             for (var i = 0; i < 17; i++)
@@ -194,11 +194,11 @@ namespace MidiJack
             {
                 for (var i = 0; i < 128; i++)
                 {
-                    var x = cs._noteArray[i];
+                    var x = cs.noteArray[i];
                     if (x > 1)
-                        cs._noteArray[i] = x - 1; // Key down -> Hold.
+                        cs.noteArray[i] = x - 1; // Key down -> Hold.
                     else if (x < 0)
-                        cs._noteArray[i] = 0; // Key up -> Off.
+                        cs.noteArray[i] = 0; // Key up -> Off.
                 }
             }
 
@@ -207,7 +207,7 @@ namespace MidiJack
             {
                 // Pop from the queue.
 #if UNITY_STANDALONE_WIN
-                ulong data = WindowsMidiInterop.Instance.DequeueIncomingData();
+                var data = WindowsMidiInterop.Instance.DequeueIncomingData();
 #else 
                 ulong data = 0;
 #endif
@@ -224,8 +224,8 @@ namespace MidiJack
                 if (statusCode == 9)
                 {
                     var velocity = 1.0f / 127 * message.data2 + 1;
-                    _channelArray[channelNumber]._noteArray[message.data1] = velocity;
-                    _channelArray[(int)MidiChannel.All]._noteArray[message.data1] = velocity;
+                    _channelArray[channelNumber].noteArray[message.data1] = velocity;
+                    _channelArray[(int)MidiChannel.All].noteArray[message.data1] = velocity;
                     if (noteOnDelegate != null)
                         noteOnDelegate((MidiChannel)channelNumber, message.data1, velocity - 1);
                 }
@@ -233,8 +233,8 @@ namespace MidiJack
                 // Note off message?
                 if (statusCode == 8 || (statusCode == 9 && message.data2 == 0))
                 {
-                    _channelArray[channelNumber]._noteArray[message.data1] = -1;
-                    _channelArray[(int)MidiChannel.All]._noteArray[message.data1] = -1;
+                    _channelArray[channelNumber].noteArray[message.data1] = -1;
+                    _channelArray[(int)MidiChannel.All].noteArray[message.data1] = -1;
                     if (noteOffDelegate != null)
                         noteOffDelegate((MidiChannel)channelNumber, message.data1);
                 }
@@ -245,9 +245,9 @@ namespace MidiJack
                     // Normalize the value.
                     var level = 1.0f / 127 * message.data2;
                     // Update the channel if it already exists, or add a new channel.
-                    _channelArray[channelNumber]._knobMap[message.data1] = level;
+                    _channelArray[channelNumber].knobMap[message.data1] = level;
                     // Do again for All-ch.
-                    _channelArray[(int)MidiChannel.All]._knobMap[message.data1] = level;
+                    _channelArray[(int)MidiChannel.All].knobMap[message.data1] = level;
                     if (knobDelegate != null)
                         knobDelegate((MidiChannel)channelNumber, message.data1, level);
                 }
@@ -270,7 +270,7 @@ namespace MidiJack
 
         #region Singleton Class Instance
 
-        static MidiDriver _instance;
+        private static MidiDriver _instance;
 
         public static MidiDriver Instance {
             get {

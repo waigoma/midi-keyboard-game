@@ -46,12 +46,12 @@ namespace MidiJack
     }
 
     // MIDI message structure
-    public struct MidiMessage
+    public readonly struct MidiMessage
     {
-        public uint source; // MIDI source (endpoint) ID
-        public byte status; // MIDI status byte
-        public byte data1;  // MIDI data bytes
-        public byte data2;
+        public readonly uint source; // MIDI source (endpoint) ID
+        public readonly byte status; // MIDI status byte
+        public readonly byte data1;  // MIDI data bytes
+        public readonly byte data2;
 
         public MidiMessage(ulong data)
         {
