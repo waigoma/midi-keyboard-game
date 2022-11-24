@@ -142,7 +142,7 @@ namespace MidiJack
         }
 
         // Message history
-        private Queue<MidiMessage> _messageHistory;
+        private readonly Queue<MidiMessage> _messageHistory;
 
         public Queue<MidiMessage> History {
             get { return _messageHistory; }
@@ -169,7 +169,7 @@ namespace MidiJack
 
         #region Private Methods
 
-        void UpdateIfNeeded()
+        private void UpdateIfNeeded()
         {
             if (Application.isPlaying)
             {
@@ -187,8 +187,9 @@ namespace MidiJack
             }
         }
 
-        void Update()
+        private void Update()
         {
+            Debug.Log("update");
             // Update the note state array.
             foreach (var cs in _channelArray)
             {
@@ -277,8 +278,7 @@ namespace MidiJack
                 if (_instance == null) {
                     _instance = new MidiDriver();
                     if (Application.isPlaying)
-                        MidiStateUpdater.CreateGameObject(
-                            new MidiStateUpdater.Callback(_instance.Update));
+                        MidiStateUpdater.CreateGameObject(_instance.Update);
                 }
                 return _instance;
             }
