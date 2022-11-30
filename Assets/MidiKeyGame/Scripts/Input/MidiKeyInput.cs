@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using MeltySynth;
 using MidiKeyGame.Scripts.Input.Keyboard;
 using UnityEngine;
 
