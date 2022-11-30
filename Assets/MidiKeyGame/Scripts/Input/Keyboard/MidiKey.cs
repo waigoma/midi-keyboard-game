@@ -28,7 +28,7 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         
         public abstract void Initialize();
 
-        private void KeyPressed(GameObject gameObject, int pos)
+        private void KeyPressed(GameObject gameObject, int pos, float value)
         {
             _keyMaterial.Pressed(gameObject);
             // _keyAudio.Play(gameObject, pos);
@@ -41,101 +41,101 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         }
 
         // キーが押されたとき OnStarted
-        protected virtual void COnStarted(InputAction.CallbackContext context)
+        protected virtual void COnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjC, 60 - 12 * (4 - Octave));
+            KeyPressed(ObjC, 60 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void CsOnStarted(InputAction.CallbackContext context)
+        protected virtual void CsOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjCs, 61 - 12 * (4 - Octave));
+            KeyPressed(ObjCs, 61 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void DOnStarted(InputAction.CallbackContext context)
+        protected virtual void DOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjD, 62 - 12 * (4 - Octave));
+            KeyPressed(ObjD, 62 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void DsOnStarted(InputAction.CallbackContext context)
+        protected virtual void DsOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjDs, 63 - 12 * (4 - Octave));
+            KeyPressed(ObjDs, 63 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void EOnStarted(InputAction.CallbackContext context)
+        protected virtual void EOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjE, 64 - 12 * (4 - Octave));
+            KeyPressed(ObjE, 64 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void FOnStarted(InputAction.CallbackContext context)
+        protected virtual void FOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjF, 65 - 12 * (4 - Octave));
+            KeyPressed(ObjF, 65 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void FsOnStarted(InputAction.CallbackContext context)
+        protected virtual void FsOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjFs, 66 - 12 * (4 - Octave));
+            KeyPressed(ObjFs, 66 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void GOnStarted(InputAction.CallbackContext context)
+        protected virtual void GOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjG, 67 - 12 * (4 - Octave));
+            KeyPressed(ObjG, 67 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void GsOnStarted(InputAction.CallbackContext context)
+        protected virtual void GsOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjGs, 68 - 12 * (4 - Octave));
+            KeyPressed(ObjGs, 68 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void AOnStarted(InputAction.CallbackContext context)
+        protected virtual void AOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjA, 69 - 12 * (4 - Octave));
+            KeyPressed(ObjA, 69 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void AsOnStarted(InputAction.CallbackContext context)
+        protected virtual void AsOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjAs, 70 - 12 * (4 - Octave));
+            KeyPressed(ObjAs, 70 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
-        protected virtual void BOnStarted(InputAction.CallbackContext context)
+        protected virtual void BOnStarted(InputAction.CallbackContext ctx)
         {
-            KeyPressed(ObjB, 71 - 12 * (4 - Octave));
+            KeyPressed(ObjB, 71 - 12 * (4 - Octave), ctx.ReadValue<float>());
         }
         
         // キーが離されたとき OnCanceled
-        protected virtual void COnCanceled(InputAction.CallbackContext context)
+        protected virtual void COnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjC);
         }
-        protected virtual void CsOnCanceled(InputAction.CallbackContext context)
+        protected virtual void CsOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjCs);
         }
-        protected virtual void DOnCanceled(InputAction.CallbackContext context)
+        protected virtual void DOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjD);
         }
-        protected virtual void DsOnCanceled(InputAction.CallbackContext context)
+        protected virtual void DsOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjDs);
         }
-        protected virtual void EOnCanceled(InputAction.CallbackContext context)
+        protected virtual void EOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjE);
         }
-        protected virtual void FOnCanceled(InputAction.CallbackContext context)
+        protected virtual void FOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjF);
         }
-        protected virtual void FsOnCanceled(InputAction.CallbackContext context)
+        protected virtual void FsOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjFs);
         }
-        protected virtual void GOnCanceled(InputAction.CallbackContext context)
+        protected virtual void GOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjG);
         }
-        protected virtual void GsOnCanceled(InputAction.CallbackContext context)
+        protected virtual void GsOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjGs);
         }
-        protected virtual void AOnCanceled(InputAction.CallbackContext context)
+        protected virtual void AOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjA);
         }
-        protected virtual void AsOnCanceled(InputAction.CallbackContext context)
+        protected virtual void AsOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjAs);
         }
-        protected virtual void BOnCanceled(InputAction.CallbackContext context)
+        protected virtual void BOnCanceled(InputAction.CallbackContext ctx)
         {
             KeyReleased(ObjB);
         }
@@ -143,7 +143,7 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         // デバッグ用 OnPerformed
         protected virtual void COnPerformed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"C{Octave}");
+            Debug.Log($"C{Octave}, {ctx.ReadValue<float>()}");
         }
         protected virtual void CsOnPerformed(InputAction.CallbackContext ctx)
         {
