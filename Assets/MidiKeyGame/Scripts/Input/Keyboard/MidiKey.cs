@@ -1,4 +1,5 @@
 ﻿using MidiKeyGame.Scripts.Audio;
+using MidiKeyGame.Scripts.MidiInterface;
 using MidiKeyGame.Scripts.Object;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -31,12 +32,14 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         private void KeyPressed(GameObject gameObject, int pos, float value)
         {
             _keyMaterial.Pressed(gameObject);
+            MidiOutBehaviour.MidiOutPort.SendNoteOn(0, pos, (int) (value * 127));
             // _keyAudio.Play(gameObject, pos);
         }
         
-        private void KeyReleased(GameObject gameObject)
+        private void KeyReleased(GameObject gameObject, int pos)
         {
             _keyMaterial.Released(gameObject);
+            MidiOutBehaviour.MidiOutPort.SendNoteOff(0, pos);
             // _keyAudio.Stop(gameObject);
         }
 
@@ -93,51 +96,51 @@ namespace MidiKeyGame.Scripts.Input.Keyboard
         // キーが離されたとき OnCanceled
         protected virtual void COnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjC);
+            KeyReleased(ObjC, 60 - 12 * (4 - Octave));
         }
         protected virtual void CsOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjCs);
+            KeyReleased(ObjCs, 61 - 12 * (4 - Octave));
         }
         protected virtual void DOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjD);
+            KeyReleased(ObjD, 62 - 12 * (4 - Octave));
         }
         protected virtual void DsOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjDs);
+            KeyReleased(ObjDs, 63 - 12 * (4 - Octave));
         }
         protected virtual void EOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjE);
+            KeyReleased(ObjE, 64 - 12 * (4 - Octave));
         }
         protected virtual void FOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjF);
+            KeyReleased(ObjF, 65 - 12 * (4 - Octave));
         }
         protected virtual void FsOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjFs);
+            KeyReleased(ObjFs, 66 - 12 * (4 - Octave));
         }
         protected virtual void GOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjG);
+            KeyReleased(ObjG, 67 - 12 * (4 - Octave));
         }
         protected virtual void GsOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjGs);
+            KeyReleased(ObjGs, 68 - 12 * (4 - Octave));
         }
         protected virtual void AOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjA);
+            KeyReleased(ObjA, 69 - 12 * (4 - Octave));
         }
         protected virtual void AsOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjAs);
+            KeyReleased(ObjAs, 70 - 12 * (4 - Octave));
         }
         protected virtual void BOnCanceled(InputAction.CallbackContext ctx)
         {
-            KeyReleased(ObjB);
+            KeyReleased(ObjB, 71 - 12 * (4 - Octave));
         }
 
         // デバッグ用 OnPerformed
