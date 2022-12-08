@@ -2,7 +2,7 @@
 
 namespace MidiKeyGame.Scripts.MidiInterface
 {
-    public class MidiOutTest : MonoBehaviour
+    public class MidiOutBehaviour : MonoBehaviour
     {
         
     }
