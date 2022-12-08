@@ -41,6 +41,8 @@ namespace MidiKeyGame.Scripts.MidiInterface
         }
         
         public List<MidiOutPort> GetPorts() => _ports;
+        
+        public MidiOutPort GetPort(int index) => _ports[index];
 
         // 全てのポートをスキャンしてオープン
         private void ScanPorts()
@@ -49,7 +51,7 @@ namespace MidiKeyGame.Scripts.MidiInterface
             {
                 var name = _midiProbe.GetPortName(i);
                 _ports.Add(IsRealPort(name) ? new MidiOutPort(i, name) : null);
-                Debug.Log($"Midi-out port found: {name}");
+                Debug.Log($"Midi-out port found({i}): {name}");
             }
         }
         
