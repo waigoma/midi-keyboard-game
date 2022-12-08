@@ -5,9 +5,15 @@ namespace MidiKeyGame.Scripts.MidiInterface
     public sealed unsafe class MidiOutPort : System.IDisposable
     {
         private RtMidiDll.Wrapper* _rtmidi;
+        
+        public int PortNumber { get; }
+        public string PortName { get; }
 
-        public MidiOutPort(int portNumber)
+        public MidiOutPort(int portNumber, string portName)
         {
+            PortNumber = portNumber;
+            PortName = portName;
+            
             _rtmidi = RtMidiDll.OutCreateDefault();
 
             if (_rtmidi != null && _rtmidi->ok)
@@ -42,14 +48,6 @@ namespace MidiKeyGame.Scripts.MidiInterface
                 RtMidiDll.OutSendMessage(_rtmidi, ptr, data.Length);
         }
 
-        private void SendMessage(byte d1, byte d2, byte d3)
-        {
-            if (_rtmidi == null || !_rtmidi->ok) return;
-
-            var msg = stackalloc byte [3] { d1, d2, d3 };
-            RtMidiDll.OutSendMessage(_rtmidi, msg, 3);
-        }
-
         public void SendNoteOn(int channel, int note, int velocity)
         {
             SendMessage((byte)(0x90 + channel), (byte)note, (byte)velocity);
@@ -68,6 +66,14 @@ namespace MidiKeyGame.Scripts.MidiInterface
         public void SendAllOff(int channel)
         {
             SendMessage((byte)(0xb0 + channel), 120, 0);
+        }
+        
+        private void SendMessage(byte d1, byte d2, byte d3)
+        {
+            if (_rtmidi == null || !_rtmidi->ok) return;
+
+            var msg = stackalloc byte [3] { d1, d2, d3 };
+            RtMidiDll.OutSendMessage(_rtmidi, msg, 3);
         }
     }
 }
