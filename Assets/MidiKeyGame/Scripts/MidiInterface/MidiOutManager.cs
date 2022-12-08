@@ -13,6 +13,11 @@ namespace MidiKeyGame.Scripts.MidiInterface
         // This is mainly used on Linux (ALSA) to filter automatically generated
         // virtual ports.
         private static bool IsRealPort(string pname) => !pname.Contains("Through") && !pname.Contains("RtMidi");
+
+        public MidiOutManager()
+        {
+            Initialize();
+        }
         
         private void Initialize()
         {
@@ -26,7 +31,7 @@ namespace MidiKeyGame.Scripts.MidiInterface
             foreach (var port in _ports) port?.SendAllOff(0);
         }
 
-        private void UpdatePort()
+        public void UpdatePort()
         {
             if (_ports.Count == _midiProbe.PortCount) return;
             
@@ -34,15 +39,17 @@ namespace MidiKeyGame.Scripts.MidiInterface
             DisposePorts();
             ScanPorts();
         }
+        
+        public List<MidiOutPort> GetPorts() => _ports;
 
         // 全てのポートをスキャンしてオープン
         private void ScanPorts()
         {
             foreach (var i in Enumerable.Range(0, _midiProbe.PortCount))
             {
-                var nm = _midiProbe.GetPortName(i);
-                _ports.Add(IsRealPort(nm) ? new MidiOutPort(i) : null);
-                Debug.Log($"Midi-out port found: {nm}");
+                var name = _midiProbe.GetPortName(i);
+                _ports.Add(IsRealPort(name) ? new MidiOutPort(i, name) : null);
+                Debug.Log($"Midi-out port found: {name}");
             }
         }
         
